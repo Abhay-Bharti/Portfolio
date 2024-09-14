@@ -1,0 +1,73 @@
+/* Project Component */
+
+.project-box{
+    background-color: lightblue;
+    margin: 20px auto;
+    padding: 10px;
+    border-radius: 20px;
+}
+
+.img-wrap{
+    width: inherit;
+}
+
+.img-wrap img{
+    height: 100%;
+    width: 100%;
+    border-radius: 20px;
+}
+
+.project-info{
+    color: #fff;
+    margin: 30px 20px;
+}
+
+.project-info h1{
+    width: fit-content;
+    margin: 20px auto;
+}
+
+/* Contact Component */
+
+.Form-box {
+    padding: 3em;
+    width: 30vw;
+    background-color: rgba(255, 255, 255, 0.1);
+    border-radius: 10px;
+}
+
+.Contact-heading {
+    font-size: 80px;
+    letter-spacing: 10px;
+
+}
+
+.col a {
+    font-size: 33px;
+}
+
+.row {
+    width: 100px;
+}
+
+.Footer-bar a {
+    margin: auto 10px;
+    text-decoration: none;
+    color: white;
+}
+
+.social-handle {
+    /* For Safari */
+    position: -webkit-sticky;
+    position: sticky;
+    top: -100vh;
+    right: 0;
+    width: 80px;
+    /* Full height of the viewport */
+    background-color: #f8f9fa;
+    /* Light gray background */
+    box-shadow: -2px 0 5px rgba(0, 0, 0, 0.1);
+    /* Optional shadow for effect */
+    z-index: 1000;
+    /* Make sure it stays on top of other content */
+}

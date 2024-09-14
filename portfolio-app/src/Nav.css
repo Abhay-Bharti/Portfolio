@@ -1,0 +1,122 @@
+.light-mode {
+    background-color: white;
+    color: black;
+}
+
+.dark-mode {
+    background-color: black;
+    color: #fff;
+}
+
+.nav-bar {
+    background-color: rgba(255, 255, 255, 0.1);
+    border-radius: 50px;
+    box-shadow: 0px 0px 10px rgba(255, 255, 255, 0.4);
+}
+
+.icon {
+    border: none;
+    width: max-content;
+    padding: 8px;
+    border-radius: 50%;
+    background-color: rgba(255, 255, 255, 0.1);
+    color: #fff;
+}
+
+.icon:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+}
+
+button[data-tooltip]:hover::after {
+    content: attr(data-tooltip);
+    background-color: rgba(255, 255, 255, 0.4);
+    color: #fff;
+    position: absolute;
+    padding: 5px 10px;
+    border-radius: 4px;
+    transform: translate(-50%);
+    top: 70px;
+    white-space: nowrap;
+    z-index: 1;
+}
+
+.list-item {
+    margin: auto 1em;
+    margin-top: 5px;
+    font-size: large;
+    letter-spacing: 1.5px;
+    color: #fff !important;
+    font-weight: 600;
+    position: relative;
+}
+
+.off-canvas {
+    background-color: black;
+}
+
+.list-item:hover,
+.list-item:active {
+    color: purple;
+}
+
+.list-item::before {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 0;
+    height: 3px;
+    background-color: purple;
+    visibility: hidden;
+    transition: 0.3s ease-in-out;
+}
+
+.list-item:hover::before,
+.list-item:active::before {
+    width: 100%;
+    visibility: visible;
+}
+
+#contact-btn {
+    border: none;
+    border-radius: 30px;
+    width: 10rem;
+    height: 3.5rem;
+    letter-spacing: 1.5px;
+    font-size: 18px;
+    background-color: purple;
+    color: white;
+    justify-self: end !important;
+}
+
+.icon-in {
+    visibility: visible;
+}
+
+.icon-out {
+    visibility: hidden;
+}
+
+@media (max-width: 576px) {
+    .nav-bar {
+        border-radius: 0;
+    }
+
+    .icon-in {
+        visibility: hidden;
+        display: none;
+    }
+
+    .icon-out {
+        visibility: visible;
+    }
+
+    .icon {
+        padding: 5px;
+    }
+
+    #contact-btn {
+        margin-top: 90%;
+    }
+}
