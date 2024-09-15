@@ -1,3 +1,15 @@
+/* MainScreen */
+
+.mainscreen-head{
+    font-size: 100px;
+    letter-spacing: 10px;
+    line-height: 0.9;
+}
+
+.mainscreen-subhead{
+    font-size: 30px;
+    margin-top: 3em;
+}
 /* Project Component */
 
 .project-box{
@@ -39,7 +51,7 @@
 .Contact-heading {
     font-size: 80px;
     letter-spacing: 10px;
-
+    text-align: center;
 }
 
 .col a {
@@ -59,15 +71,55 @@
 .social-handle {
     /* For Safari */
     position: -webkit-sticky;
-    position: sticky;
-    top: -100vh;
+    position: fixed;
+    top: 20vh;
     right: 0;
     width: 80px;
-    /* Full height of the viewport */
-    background-color: #f8f9fa;
     /* Light gray background */
     box-shadow: -2px 0 5px rgba(0, 0, 0, 0.1);
     /* Optional shadow for effect */
     z-index: 1000;
     /* Make sure it stays on top of other content */
+}
+
+.social-handle .col{
+    margin: 10px auto;
+}
+/* Skill Set */
+
+.skill{
+    margin: 10px;
+    width: 100%;
+}
+
+.skilled-num{
+    height: 25px;
+    width: 25px;
+    margin: 5px;
+    border-radius: 50%;
+    background-color: blueviolet;
+}
+
+.num{
+    height:25px;
+    width: 25px;
+    margin: 5px;
+    border-radius: 50%;
+    background-color: white;
+}
+
+/* Certifications  */
+
+#Certificate{
+    padding: 100px;
+}
+
+.certificate-img img{
+    height: 100%;
+    width: 100%;
+    border-radius: 1em;
+}
+
+.slick-slide > div{
+    margin: 0 10px;
 }

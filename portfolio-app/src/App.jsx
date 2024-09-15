@@ -1,5 +1,6 @@
 import AboutMe from './AboutMe.jsx';
 import './App.css'
+import Certification from './Certification.jsx';
 import ContactMe from './ContactMe.jsx';
 import MainScreen from "./MainScreen"
 import Projects from './Project.jsx';
@@ -14,6 +15,7 @@ function App() {
       <AboutMe />
       <Projects />
       <Skillset />
+      <Certification/>
       <ContactMe />
       <SocialHandle />
     </>

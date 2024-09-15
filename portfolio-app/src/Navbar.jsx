@@ -21,7 +21,7 @@ export default function PortfolioNav() {
         <>
             <Container
                 className={`mt-sm-3 justify-content-center nav-bar text-white
-                    ${!mode ? 'dark-mode' : 'light-mode'}`}
+                    ${!mode ? 'dark-mode' : 'light-mode'}`} id="#Home"
             >
                 <Navbar expand="sm" >
                     <Container>
@@ -56,12 +56,15 @@ export default function PortfolioNav() {
                                         <Nav.Link className="list-item" href="#Project">Projects</Nav.Link>
                                     </div>
                                     <div>
-                                        <Nav.Link className="list-item" href="#Contact">Contact</Nav.Link>
+                                        <Nav.Link className="list-item" href="#Skills">Skill Set</Nav.Link>
+                                    </div>
+                                    <div>
+                                        <Nav.Link className="list-item" href="#Certificate">Certifications</Nav.Link>
                                     </div>
                                 </Nav>
                                 <button className="icon icon-in align-self-center me-2 " onClick={handleMode} data-tooltip={mode ? "Switch to Dark Mode" : "Switch to Light Mode"}>{!mode ? <LightModeOutlinedIcon /> : <DarkModeOutlinedIcon />}</button>
 
-                                <button id="contact-btn">Contact me</button>
+                                <button id="contact-btn" href='#Contact'>Contact me</button>
 
                             </Offcanvas.Body>
                         </Navbar.Offcanvas>
