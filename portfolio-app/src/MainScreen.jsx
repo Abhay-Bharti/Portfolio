@@ -1,6 +1,6 @@
 import { Container } from "react-bootstrap";
 import PortfolioNav from "./Navbar";
-import image from './assets/Me1.jpg'
+import image from './assets/ME1.jpg'
 import Typewriter from 'typewriter-effect';
 
 export default function MainScreen() {
