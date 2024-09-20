@@ -1,20 +1,73 @@
+import React, { useState } from 'react';
 import { Container, Button, Form } from 'react-bootstrap';
+import emailjs from '@emailjs/browser';
 
 export default function ContactMe() {
+    const [formData, setFormData] = useState({
+        name: '',
+        email: '',
+        message: '',
+    });
+
+    const handleChange = (e) => {
+        setFormData({ ...formData, [e.target.name]: e.target.value });
+    };
+
+    const handleSubmit = (e) => {
+        e.preventDefault();
+        const service_id = 'service_sbhnago';
+        const template_id = 'template_7juej6m';
+        const public_key = 'b-iXlijGHLguh_yCW';
+
+        const templateParams = {
+            from_name: formData.name,
+            from_email: formData.email,
+            to_name: 'Abhay Bharti',
+            message: formData.message,
+        };
+
+        emailjs.send(service_id, template_id, templateParams, public_key)
+            .then((response) => {
+                console.log('SUCCESS!');
+                setFormData({
+                    name: '',
+                    email: '',
+                    message: '',
+                });
+                alert('Thank you for reaching out to me. I will get to you soon.');
+            }, (error) => {
+                console.log(error);
+                alert('An error occurred, please try again.');
+            });
+    };
+
     return (
         <>
-            <Container className='d-flex flex-column align-items-center Contact-container'>
+            <Container className='d-flex flex-column align-items-center' id='Contact'>
                 <h1 className='Contact-heading'>Contact Me</h1>
-                <Form className='Form-box'>
+                <Form className='Form-box' onSubmit={handleSubmit}>
                     <Form.Group className="mb-3" controlId="nameField">
                         <Form.Label>Name*</Form.Label>
-                        <Form.Control type="text" placeholder="Enter your name" />
+                        <Form.Control
+                            type="text"
+                            placeholder="Enter your name"
+                            name='name'
+                            value={formData.name}
+                            onChange={handleChange}
+                            required
+                        />
                     </Form.Group>
-
 
                     <Form.Group className="mb-3" controlId="emailField">
                         <Form.Label>Email address*</Form.Label>
-                        <Form.Control type="email" placeholder="Enter email" />
+                        <Form.Control
+                            type="email"
+                            placeholder="Enter email"
+                            name='email'
+                            value={formData.email}
+                            onChange={handleChange}
+                            required
+                        />
                     </Form.Group>
 
                     <Form.Group className="mb-3" controlId="messageBox">
@@ -23,6 +76,10 @@ export default function ContactMe() {
                             as="textarea"
                             placeholder="Enter message"
                             style={{ height: '100px' }}
+                            name='message'
+                            value={formData.message}
+                            onChange={handleChange}
+                            required
                         />
                     </Form.Group>
 
@@ -31,15 +88,6 @@ export default function ContactMe() {
                     </Button>
                 </Form>
             </Container>
-
-            <div style={{ height: '2px', backgroundColor: 'white', margin: '2em auto' }}></div>
-
-            <Container className="d-flex justify-content-between mb-3" style={{fontSize: "larger"}}>
-                <div>Abhay Bharti</div>
-                <div className="d-flex justify-content-evenly Footer-bar">
-                    <a href="#Home">Home</a><a href="#AboutMe">About Me</a><a href="#Projects">Projects</a><a href="#Contact">Contact Me</a>
-                </div>
-            </Container>
         </>
-    )
+    );
 }

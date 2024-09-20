@@ -1,42 +1,42 @@
-.left {
+.left-img {
     height: 500px;
     aspect-ratio: 1/1;
-    border-radius: 50%;
-    overflow: hidden;
 }
 
-.left-img {
+.left-img img {
     height: 100%;
     width: 100%;
     object-fit: cover;
-    position: relative;
+    border-radius: 50%;
 }
 
-.left-bubble{
+.left-bubble {
     height: 120px;
     width: 120px;
     border-radius: 50%;
+    top: -120px;
     z-index: 1;
     position: relative;
-    top: -20px;
-    left: -600px;
-    background: hsla(211, 96%, 62%, 1);background: linear-gradient(90deg, hsla(211, 96%, 62%, 1) 0%, hsla(295, 94%, 76%, 1) 100%);
-    background: -moz-linear-gradient(90deg, hsla(211, 96%, 62%, 1) 0%, hsla(295, 94%, 76%, 1) 100%);
-    background: -webkit-linear-gradient(90deg, hsla(211, 96%, 62%, 1) 0%, hsla(295, 94%, 76%, 1) 100%);
-    filter: progid: DXImageTransform.Microsoft.gradient( startColorstr="#439CFB%22,%20endColorstr=%22#F187FB%22,%20GradientType=1%20");
+    background: hsla(211, 95%, 76%, 1);
+    background: linear-gradient(270deg, hsla(211, 95%, 76%, 1) 0%, hsla(167, 82%, 35%, 1) 100%);
+    background: -moz-linear-gradient(270deg, hsla(211, 95%, 76%, 1) 0%, hsla(167, 82%, 35%, 1) 100%);
+    background: -webkit-linear-gradient(270deg, hsla(211, 95%, 76%, 1) 0%, hsla(167, 82%, 35%, 1) 100%);
+    filter: progid: DXImageTransform.Microsoft.gradient(startColorstr="#88C1FC%22,%20endColorstr=%22#10A484%22,%20GradientType=1%20");
 }
 
 .right {
     width: 500px;
     height: 500px;
+    display: flex;
+    align-items: center;
 }
 
-.right-header {
+.left-header {
     height: 150px;
     width: 150%;
+    top: 50px;
+    left: 17vw;
     position: relative;
-    top: -40px;
-    left: -250px;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -44,4 +44,32 @@
     font-weight: 600;
     letter-spacing: 8px;
     line-height: 1;
+}
+
+
+@media screen and (max-width: 600px) {
+
+
+    .left-header {
+        top: 0;
+        left: 0;
+        font-size: 50px;
+        width: 100%;
+    }
+
+    .left-img {
+        height: 300px;
+    }
+
+    .left-bubble {
+        height: 0;
+        width: 0;
+        margin-bottom: 3em;
+    }
+
+    .right {
+        width: 95%;
+        height: min-content;
+        font-size: medium;
+    }
 }

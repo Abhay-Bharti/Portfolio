@@ -1,65 +1,119 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap');
+
+body {
+    font-family: "Roboto Mono", monospace;
+    font-optical-sizing: auto;
+}
+
 /* MainScreen */
 
-.mainscreen-head{
+#Home {
+    margin-bottom: 6em;
+}
+
+.mainscreen-left {
+    width: 50%;
+}
+
+.mainscreen-head {
     font-size: 100px;
     letter-spacing: 10px;
     line-height: 0.9;
+    height: 30vh;
 }
 
-.mainscreen-subhead{
+
+.mainscreen-subhead {
     font-size: 30px;
     margin-top: 3em;
 }
+
+.mainscreen-img {
+    max-width: 40%;
+    
+}
+
+.mainscreen-img img {
+    height: 100%;
+    width: 100%;
+    border-radius: 10px;
+}
+
 /* Project Component */
 
-.project-box{
-    background-color: lightblue;
-    margin: 20px auto;
+.project-box {
+    margin: 30px auto;
     padding: 10px;
     border-radius: 20px;
+    display: flex;
+    justify-content: space-between;
+    background-color: rgba(255, 255, 255, 0.1);
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+    transition: transform 0.3s ease;
+    flex-wrap: wrap;
 }
 
-.img-wrap{
-    width: inherit;
+.project-box:hover {
+    transform: scale(1.03);
 }
 
-.img-wrap img{
+.project-box.reverse {
+    flex-direction: row-reverse;
+}
+
+.project-carousel {
+    width: 40rem;
+}
+
+.img-wrap {
+    width: 40rem;
+}
+
+.img-wrap img {
     height: 100%;
     width: 100%;
     border-radius: 20px;
 }
 
-.project-info{
+.project-info {
     color: #fff;
-    margin: 30px 20px;
+    margin: auto 20px;
+    width: 35rem;
+    align-self: center;
 }
 
-.project-info h1{
+.project-info h1 {
     width: fit-content;
     margin: 20px auto;
+}
+
+.project-info a {
+    color: lightblue;
 }
 
 /* Contact Component */
 
 .Form-box {
-    padding: 3em;
+    padding: 2em;
     width: 30vw;
     background-color: rgba(255, 255, 255, 0.1);
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
     border-radius: 10px;
 }
 
 .Contact-heading {
     font-size: 80px;
-    letter-spacing: 10px;
+    margin-bottom: .8em;
     text-align: center;
 }
 
-.col a {
+.col {
     font-size: 33px;
+    transition: transform 0.5s ease;
 }
 
-.row {
-    width: 100px;
+.col:hover {
+    transform: scale(1.2);
 }
 
 .Footer-bar a {
@@ -75,24 +129,27 @@
     top: 20vh;
     right: 0;
     width: 80px;
-    /* Light gray background */
     box-shadow: -2px 0 5px rgba(0, 0, 0, 0.1);
-    /* Optional shadow for effect */
     z-index: 1000;
-    /* Make sure it stays on top of other content */
 }
 
-.social-handle .col{
+.social-handle .col {
     margin: 10px auto;
 }
+
 /* Skill Set */
 
-.skill{
+
+#Skills {
+    margin-top: 2em;
+}
+
+.skill {
     margin: 10px;
     width: 100%;
 }
 
-.skilled-num{
+.skilled-num {
     height: 25px;
     width: 25px;
     margin: 5px;
@@ -100,26 +157,140 @@
     background-color: blueviolet;
 }
 
-.num{
-    height:25px;
+.num {
+    height: 25px;
     width: 25px;
     margin: 5px;
     border-radius: 50%;
     background-color: white;
 }
 
-/* Certifications  */
+/* .skill-heading {
+    font-size: "26px";
+    font-weight: "700";
+} */
 
-#Certificate{
-    padding: 100px;
+.spring-carousel {
+    width: "80%";
+    height: "300px";
+    margin: "0 auto 50px auto";
 }
 
-.certificate-img img{
+.footer-line {
+    background-color: #fff;
+    height: 2px;
+    margin: 2em auto;
+}
+
+.logo-wrap {
+    height: 60px;
+    width: 60px;
+}
+
+.logo-wrap img {
     height: 100%;
     width: 100%;
-    border-radius: 1em;
 }
 
-.slick-slide > div{
-    margin: 0 10px;
+.navbar-toggler:focus,
+.btn-close:focus {
+    box-shadow: none;
+    outline: none;
+}
+
+@media screen and (max-width: 600px) {
+
+    .project-carousel {
+        width: 100%;
+    }
+
+    .Contact-heading {
+        font-size: xx-large;
+    }
+
+    .social-handle {
+        position: static;
+        margin-bottom: 0px;
+        width: 100%;
+        box-shadow: -2px 0 5px rgba(0, 0, 0, 0.1);
+    }
+
+    .social-handle col {
+        margin: 0;
+    }
+
+    .skilled-num {
+        height: 10px;
+        width: 10px;
+        margin: 5px;
+        border-radius: 50%;
+        background-color: blueviolet;
+    }
+
+    .num {
+        height: 10px;
+        width: 10px;
+        margin: 5px;
+    }
+
+    .footer-line {
+        margin: 0px auto 10px auto;
+    }
+
+    .Form-box {
+        width: 100%;
+    }
+
+    .Footer-bar a {
+        margin: auto;
+        font-size: small;
+
+    }
+
+    .footer-a-width {
+        width: 200px;
+    }
+
+    .img-wrap {
+        width: 85vw;
+        margin: 0 auto;
+    }
+
+    .img-wrap img {
+        border-radius: 5px;
+    }
+
+    .project-info {
+        margin: 5px;
+        font-size: small;
+    }
+
+    .mainscreen-left {
+        width: 90%;
+    }
+
+    .mainscreen-head {
+        font-size: 60px;
+        letter-spacing: 10px;
+        line-height: 0.9;
+        height: 20vh;
+    }
+
+    .mainscreen-subhead {
+        font-size: 15px;
+        margin-top: 0;
+    }
+
+    .mainscreen-img {
+        max-width: 90%;
+    }
+
+    #Home {
+        margin-bottom: 3em;
+    }
+
+    .logo-wrap {
+        height: 40px;
+        width: 40px;
+    }
 }

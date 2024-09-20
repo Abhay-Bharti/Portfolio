@@ -1,20 +1,10 @@
-.light-mode {
-    background-color: white;
-    color: black;
-}
-
-.dark-mode {
-    background-color: black;
-    color: #fff;
-}
-
 .nav-bar {
     background-color: rgba(255, 255, 255, 0.1);
     border-radius: 50px;
     box-shadow: 0px 0px 10px rgba(255, 255, 255, 0.4);
 }
 
-.icon {
+/* .icon {
     border: none;
     width: max-content;
     padding: 8px;
@@ -38,7 +28,7 @@ button[data-tooltip]:hover::after {
     top: 70px;
     white-space: nowrap;
     z-index: 1;
-}
+} */
 
 .list-item {
     margin: auto 1em;
@@ -48,10 +38,6 @@ button[data-tooltip]:hover::after {
     color: #fff !important;
     font-weight: 600;
     position: relative;
-}
-
-.off-canvas {
-    background-color: black;
 }
 
 .list-item:hover,
@@ -90,20 +76,20 @@ button[data-tooltip]:hover::after {
     justify-self: end !important;
 }
 
-.icon-in {
+/* .icon-in {
     visibility: visible;
 }
 
 .icon-out {
     visibility: hidden;
-}
+} */
 
 @media (max-width: 576px) {
     .nav-bar {
         border-radius: 0;
     }
 
-    .icon-in {
+    /* .icon-in {
         visibility: hidden;
         display: none;
     }
@@ -114,7 +100,7 @@ button[data-tooltip]:hover::after {
 
     .icon {
         padding: 5px;
-    }
+    } */
 
     #contact-btn {
         margin-top: 90%;

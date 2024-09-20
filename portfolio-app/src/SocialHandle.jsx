@@ -6,28 +6,24 @@ import FacebookIcon from '@mui/icons-material/Facebook';
 import { Container } from 'react-bootstrap';
 
 export default function SocialHandle() {
+
     return (
-        <Container className='d-flex flex-column p-3 social-handle'>
-            <div className="row">
+        <Container className='p-3 social-handle'>
+            <div className="d-flex flex-sm-column justify-content-center align-items-center">
                 <div className="col">
-                    <a href="https://www.linkedin.com/in/abhay-bharti-857757252/"><LinkedInIcon style={{ fontSize: "40px" }} /></a>
+                    <a href="https://www.linkedin.com/in/abhay-bharti-857757252/" target='__blank'><LinkedInIcon style={{ fontSize: "40px", color: " #fff" }} /></a>
                 </div>
                 <div className="col">
-                    <a href="mailto:[abhaybharti2123@gmail.com]"><EmailIcon style={{ fontSize: "40px" }} /></a>
+                    <a href="mailto:abhaybharti2123@gmail.com"><EmailIcon style={{ fontSize: "40px", color: " #fff" }} /></a>
                 </div>
                 <div className="col">
-                    <a href="#"><i className="fa-brands fa-discord"></i></a>
-                </div>
-            </div>
-            <div className="row">
-                <div className="col">
-                    <a href="https://github.com/Abhay-Bharti"><GitHubIcon style={{ fontSize: "40px" }} /></a>
+                    <a href="https://github.com/Abhay-Bharti" target='_blank' ><GitHubIcon style={{ fontSize: "40px", color: " #fff" }}  /></a>
                 </div>
                 <div className="col">
-                    <a href="#"><InstagramIcon style={{ fontSize: "40px" }} /></a>
+                    <a href="https://www.instagram.com/abhay_bhartii/" target='_blank' ><InstagramIcon style={{ fontSize: "40px", color: " #fff" }}  /></a>
                 </div>
                 <div className="col">
-                    <a href="#"><FacebookIcon style={{ fontSize: "40px" }} /></a>
+                    <a href="https://facebook.com/profile.php?id=100015552886160" target='_blank' ><FacebookIcon style={{ fontSize: "40px", color: " #fff" }} /></a>
                 </div>
             </div>
         </Container>

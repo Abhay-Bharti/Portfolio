@@ -1,77 +1,83 @@
 import "./Nav.css";
 import { Container, Navbar, Offcanvas, Nav } from 'react-bootstrap';
-import LightModeOutlinedIcon from '@mui/icons-material/LightModeOutlined';
-import DarkModeOutlinedIcon from '@mui/icons-material/DarkModeOutlined';
 import { useState } from "react";
+import logo from "./assets/logo.png";
 
 export default function PortfolioNav() {
-    const [mode, setMode] = useState(true);
+    const [showOffcanvas, setShowOffcanvas] = useState(false);
 
-    const handleMode = () => {
-        setMode(!mode);
-    }
+    const handleClose = () => setShowOffcanvas(false);
+    const handleShow = () => setShowOffcanvas(true);
 
-    // if (mode) {
-    //     document.body.classList.add('light-mode');
-    // } else {
-    //     document.body.classList.remove('light-mode');
-    // }
+    const handleLinkClick = (e) => {
+        e.preventDefault();
+        const targetId = e.currentTarget.getAttribute("href");
+
+        handleClose();
+
+        setTimeout(() => {
+            const targetElement = document.querySelector(targetId);
+            if (targetElement) {
+                targetElement.scrollIntoView({ behavior: "smooth" });
+            }
+        }, 300); // Delay to ensure Offcanvas has closed
+    };
 
     return (
         <>
-            <Container
-                className={`mt-sm-3 justify-content-center nav-bar text-white
-                    ${!mode ? 'dark-mode' : 'light-mode'}`} id="#Home"
-            >
-                <Navbar expand="sm" >
+            <Container className="mt-sm-3 nav-bar">
+                <Navbar expand="sm" data-bs-theme="dark">
                     <Container>
-                        <Navbar.Brand className="text-white">Abhay</Navbar.Brand>
+                        <Navbar.Brand className="text-white">
+                            <div className="logo-wrap">
+                                <img src={logo} alt="logo" />
+                            </div>
+                        </Navbar.Brand>
                         <div>
-                        <button className="icon icon-out align-self-center me-2 " onClick={handleMode} data-tooltip={mode ? "Switch to Dark Mode" : "Switch to Light Mode"}>{!mode ? <LightModeOutlinedIcon /> : <DarkModeOutlinedIcon />}</button>
-
-                        <Navbar.Toggle aria-controls={`offcanvasNavbar-expand-sm`} />
+                            <Navbar.Toggle aria-controls="offcanvasNavbar-expand-sm" onClick={handleShow} />
                         </div>
 
                         <Navbar.Offcanvas
-                            className="off-canvas"
-                            id={`offcanvasNavbar-expand-sm`}
-                            aria-labelledby={`offcanvasNavbarLabel-expand-sm`}
+                            show={showOffcanvas}
+                            onHide={handleClose}
+                            data-bs-theme="dark"
+                            id="offcanvasNavbar-expand-sm"
+                            aria-labelledby="offcanvasNavbarLabel-expand-sm"
                             placement="end"
+                            scroll={true}
                         >
-                            <Offcanvas.Header closeButton style={{ color: "white" }}>
-                                <Offcanvas.Title id={`offcanvasNavbarLabel-expand-sm`} >
-                                    Offcanvas
+                            <Offcanvas.Header closeButton>
+                                <Offcanvas.Title id="offcanvasNavbarLabel-expand-sm">
+                                    Abhay Bharti
                                 </Offcanvas.Title>
                             </Offcanvas.Header>
 
                             <Offcanvas.Body>
                                 <Nav className="justify-content-center flex-grow-1">
                                     <div>
-                                        <Nav.Link className="list-item" href="#Home">Home</Nav.Link>
+                                        <Nav.Link className="list-item" href="#Home" onClick={handleLinkClick}>Home</Nav.Link>
                                     </div>
                                     <div>
-                                        <Nav.Link className="list-item" href="#AboutMe">About Me</Nav.Link>
+                                        <Nav.Link className="list-item" href="#AboutMe" onClick={handleLinkClick}>About Me</Nav.Link>
                                     </div>
                                     <div>
-                                        <Nav.Link className="list-item" href="#Project">Projects</Nav.Link>
+                                        <Nav.Link className="list-item" href="#Project" onClick={handleLinkClick}>Projects</Nav.Link>
                                     </div>
                                     <div>
-                                        <Nav.Link className="list-item" href="#Skills">Skill Set</Nav.Link>
+                                        <Nav.Link className="list-item" href="#Skills" onClick={handleLinkClick}>Skill Set</Nav.Link>
                                     </div>
                                     <div>
-                                        <Nav.Link className="list-item" href="#Certificate">Certifications</Nav.Link>
+                                        <Nav.Link className="list-item" href="#Certificate" onClick={handleLinkClick}>Certifications</Nav.Link>
                                     </div>
                                 </Nav>
-                                <button className="icon icon-in align-self-center me-2 " onClick={handleMode} data-tooltip={mode ? "Switch to Dark Mode" : "Switch to Light Mode"}>{!mode ? <LightModeOutlinedIcon /> : <DarkModeOutlinedIcon />}</button>
-
-                                <button id="contact-btn" href='#Contact'>Contact me</button>
-
+                                <a href="#Contact">
+                                    <button id="contact-btn">Contact me</button>
+                                </a>
                             </Offcanvas.Body>
                         </Navbar.Offcanvas>
                     </Container>
                 </Navbar>
             </Container>
-
         </>
     );
 }
